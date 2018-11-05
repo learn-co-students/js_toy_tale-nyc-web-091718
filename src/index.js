@@ -4,8 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const toyForm = document.querySelector('.container')
   const addToyForm = document.querySelector('.add-toy-form')
   const toyCollection = document.querySelector('#toy-collection')
+  const inpName = document.getElementById('input_name')
+  const inpURL = document.getElementById('input_url')
   let toyData = []
   let addToy = false
+  let editToy = false
 
 
 
@@ -29,17 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // const likeButton = document.querySelector('.like-btn')
   // debugger
   toyCollection.addEventListener('click', (event) => {
-    // debugger
-    // console.log(toyData)
-    if (event.target.dataset.id) {
-      let toyID = parseInt(event.target.dataset.id)
-      let clickedToy = toyData.filter((toy) =>
-        (toy.id === toyID)
-      )
-      // console.log(clickedToy)
-      // debugger
-      let toyLiked = ++clickedToy[0].likes
-      // console.log(toyLikes)
+    let toyID = parseInt(event.target.dataset.id)
+    let clickedToy = toyData.filter((toy) =>
+      (toy.id === toyID)
+    )
+    let toyLiked = ++clickedToy[0].likes
+    if (event.target.dataset.action === 'like') {
       fetch(`http://localhost:3000/toys/${toyID}`, {
         method: 'PATCH',
         headers: {
@@ -50,17 +48,29 @@ document.addEventListener('DOMContentLoaded', () => {
           "likes": toyLiked
         })
       })
-      // debugger
       let likesIncrement = event.target.parentNode.getElementsByTagName('p')[0]
       likesIncrement.innerText = parseInt(likesIncrement.innerText) + 1 + " Likes"
-      // debugger
-      // console.log(event.target)}
-    }})
+    }
+    else if (event.target.dataset.action === 'edit') {
+
+
+      // fetch(`http://localhost:3000/toys/${toyID}`, {
+      //   method: 'PATCH',
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //     Accept: "application/json"
+      //   },
+      //   body: JSON.stringify({
+      //     "name":
+      //   })
+      // })
+      // let likesIncrement = event.target.parentNode.getElementsByTagName('p')[0]
+      // likesIncrement.innerText = parseInt(likesIncrement.innerText) + 1 + " Likes"
+    }
+  })
 
     addToyForm.addEventListener('submit', (event) => {
         event.preventDefault()
-        const inpName = document.getElementById('input_name')
-        const inpURL = document.getElementById('input_url')
         // debugger
         fetch(`http://localhost:3000/toys/`, {
           method: 'POST',
@@ -86,6 +96,19 @@ document.addEventListener('DOMContentLoaded', () => {
         // toyCollection.innerHTML += toyCard()
         // debugger
         // console.log(event.target)}
+  // const editBtn = document.querySelector('#edit-btn')
+  // editBtn.addEventListener('click', (event) => {
+  //   if (event.target.dataset.id) {
+  //     debugger
+  //   // hide & seek with the form
+  //   editToy = !editToy
+  //   if (editToy) {
+  //     toyForm.style.display = 'block'
+  //     // submit listener here
+  //   } else {
+  //     toyForm.style.display = 'none'
+  //   }}
+  // })
 
 
   addBtn.addEventListener('click', () => {
@@ -107,7 +130,17 @@ document.addEventListener('DOMContentLoaded', () => {
       <h2>${toy.name}</h2>
       <img src=${toy.image} class="toy-avatar" />
       <p data-likes=${toy.id}>${toy.likes} Likes </p>
-      <button class="like-btn" data-id="${toy.id}">Like <3</button>
+      <button class="like-btn" data-id="${toy.id}" data-action="like">Like <3</button>
+      <button id="edit-btn" class="edit-btn" data-id="${toy.id}" data-action="edit">Edit!</button>
+      <form class="edit-toy-form" data-id="${toy.id}" style="">
+        <h3>Edit a toy!</h3>
+
+        <input id="edit_name" type="text" name="name" value="" placeholder="Enter a toy's name..." class="input-text">
+        <br>
+        <input id="edit_url" type="text" name="image" value="" placeholder="Enter a toy's image URL..." class="input-text">
+        <br>
+        <input type="submit" name="submit" value="Edit Toy" class="submit">
+      </form>
       </div>`
     })
 
