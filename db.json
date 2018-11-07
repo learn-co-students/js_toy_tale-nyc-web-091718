@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Woody",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-      "likes": 5
+      "likes": 31
     },
     {
       "id": 2,
@@ -47,6 +47,26 @@
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
       "likes": -2
+    },
+    {
+      "name": "Ruby",
+      "image": "https://target.scene7.com/is/image/Target/GUEST_32493810-110f-4057-af9f-941cc3bb7f68?wid=488&hei=488&fmt=webp",
+      "id": 9
+    },
+    {
+      "name": "Zelda",
+      "image": "https://target.scene7.com/is/image/Target/GUEST_32493810-110f-4057-af9f-941cc3bb7f68?wid=488&hei=488&fmt=webp",
+      "id": 10
+    },
+    {
+      "name": "Zelda",
+      "image": "https://target.scene7.com/is/image/Target/GUEST_32493810-110f-4057-af9f-941cc3bb7f68?wid=488&hei=488&fmt=webp",
+      "id": 11
+    },
+    {
+      "name": "Scoti",
+      "image": "https://target.scene7.com/is/image/Target/GUEST_32493810-110f-4057-af9f-941cc3bb7f68?wid=488&hei=488&fmt=webp",
+      "id": 12
     }
   ]
 }
