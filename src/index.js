@@ -113,5 +113,9 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 
-
+//Notes
+//e.target.className - to get a class
+//target.parentElement.querySelector('p' or 'className')
+//parseInt(whatever you want to get from the innerText that is just a number)
+//create a toy: 
 // OR HERE!

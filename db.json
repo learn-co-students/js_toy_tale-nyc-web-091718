@@ -4,19 +4,19 @@
       "id": 1,
       "name": "Woody",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-      "likes": 5
+      "likes": 16
     },
     {
       "id": 2,
       "name": "Buzz Lightyear",
       "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
-      "likes": 8
+      "likes": 2
     },
     {
       "id": 3,
       "name": "Mr. Potato Head",
       "image": "https://vignette.wikia.nocookie.net/universe-of-smash-bros-lawl/images/d/d8/Mr-potato-head-toy-story.gif/revision/latest?cb=20151129131217",
-      "likes": 3
+      "likes": 4
     },
     {
       "id": 4,
@@ -47,6 +47,24 @@
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
       "likes": -2
+    },
+    {
+      "name": "Gracie",
+      "image": "https://lumiere-a.akamaihd.net/v1/images/file_81940c1a.jpeg?width=1200&region=0%2C0%2C2000%2C2000&optimize=true",
+      "likes": 0,
+      "id": 9
+    },
+    {
+      "name": "Babyluv",
+      "image": "https://lumiere-a.akamaihd.net/v1/images/file_81940c1a.jpeg?width=1200&region=0%2C0%2C2000%2C2000&optimize=true",
+      "likes": 0,
+      "id": 10
+    },
+    {
+      "name": "Babycake",
+      "image": "https://images.homedepot-static.com/productImages/d89f88e1-939e-4307-a493-4dcc9acd771f/svn/multi-roommates-wall-decals-rmk1432gm-64_1000.jpg",
+      "likes": 0,
+      "id": 11
     }
   ]
 }
